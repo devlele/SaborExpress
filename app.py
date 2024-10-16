@@ -17,6 +17,15 @@ def exibir_opcoes():#funcão para exibis as opçoes de serviço da aplicação
     print('3. Ativar restaurante')
     print('4. Sair\n')
 
+def listar_restaurantes():
+    os.system('cls')
+    print('Listando os restaurantes')
+    for restaurante in restaurantes:
+        print(f'.{restaurante}')
+
+    input('\nDigite "ENTER" para voltar ao menu principal\n')
+    main()
+
 def opcao_invalida(): #função para lidar com dados invalidos
     print('Opção inválida!\n')
     input('Aperte a tecla "ENTER" para voltar ao menu principal')
@@ -28,7 +37,7 @@ def cadastro_restaurante():#função de cadastro de restaurante
     nome_restaurante = input('Digite o nome do restaurante que deseja cadastrar: ')
     restaurantes.append(nome_restaurante)#pega o nome informado e coloca na lista
     print(f'O restaurante {nome_restaurante} foi cadastrado com sucesso!')
-    input('Digite "ENTER" para voltar ao menu principal')
+    input('\nDigite "ENTER" para voltar ao menu principal\n')
     main()
 
 def finalizar_app(): #função para encerrar o programa
@@ -43,7 +52,7 @@ def escolher_opcao():#funcão para escolher uma das opções
         if opcao_escolhida == 1:
             cadastro_restaurante()
         elif opcao_escolhida== 2: #elif é o equivalente a else if
-            print('Listar restaurantes')
+            listar_restaurantes()
         elif opcao_escolhida == 3:
             print('Ativir restaurante')
         elif opcao_escolhida == 4:
