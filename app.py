@@ -1,5 +1,8 @@
 import os
-restaurantes = []#criação de lista
+restaurantes = [{'nome':'Praça', 'categoria':'Japonesa', 'ativo':True},
+{'nome':'Cantina', 'categoria':'Italiano', 'ativo':False},
+{'nome':'Chapéu de couro', 'categoria':'Comida nordestina', 'ativo':True}
+]#criação de um dicionário.Serve para armazenar mais de uma informaççao sobre a mesma coisa
 
 def exibir_nome():
     print("""
@@ -29,7 +32,10 @@ def exibir_subtitulo(texto):
 def listar_restaurantes():
     exibir_subtitulo('Listando os restaurantes')
     for restaurante in restaurantes:
-        print(f'.{restaurante}')
+        nome_restaurante = restaurante['nome'] 
+        categoria = restaurante['categoria']
+        ativo = restaurante['ativo']
+        print(f' - {nome_restaurante} | {categoria} | {ativo}')
     voltar_ao_menu()
 
 def opcao_invalida(): #função para lidar com dados invalidos
@@ -56,7 +62,7 @@ def escolher_opcao():#funcão para escolher uma das opções
         elif opcao_escolhida== 2: #elif é o equivalente a else if
             listar_restaurantes()
         elif opcao_escolhida == 3:
-            print('Ativir restaurante')
+            print('Ativar restaurante')
         elif opcao_escolhida == 4:
             finalizar_app()
         else: 
