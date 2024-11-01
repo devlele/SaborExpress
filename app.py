@@ -17,32 +17,34 @@ def exibir_opcoes():#funcão para exibis as opçoes de serviço da aplicação
     print('3. Ativar restaurante')
     print('4. Sair\n')
 
-def listar_restaurantes():
-    os.system('cls')
-    print('Listando os restaurantes')
-    for restaurante in restaurantes:
-        print(f'.{restaurante}')
-
+def voltar_ao_menu():#Fução para retornar ao menu principal
     input('\nDigite "ENTER" para voltar ao menu principal\n')
     main()
+
+def exibir_subtitulo(texto):
+    os.system
+    print(texto)
+    print()
+
+def listar_restaurantes():
+    exibir_subtitulo('Listando os restaurantes')
+    for restaurante in restaurantes:
+        print(f'.{restaurante}')
+    voltar_ao_menu()
 
 def opcao_invalida(): #função para lidar com dados invalidos
     print('Opção inválida!\n')
-    input('Aperte a tecla "ENTER" para voltar ao menu principal')
-    main()
+    voltar_ao_menu()
 
 def cadastro_restaurante():#função de cadastro de restaurante
-    os.system('cls')
-    print('Cadastro de novos restaurantes\n')
+    exibir_subtitulo('Cadastro de novos restaurantes\n')
     nome_restaurante = input('Digite o nome do restaurante que deseja cadastrar: ')
     restaurantes.append(nome_restaurante)#pega o nome informado e coloca na lista
     print(f'O restaurante {nome_restaurante} foi cadastrado com sucesso!')
-    input('\nDigite "ENTER" para voltar ao menu principal\n')
-    main()
+    voltar_ao_menu()
 
 def finalizar_app(): #função para encerrar o programa
-    os.system('cls') #limpa o terminal quando finaliza
-    print('Encerrando o app')
+    exibir_subtitulo('Finalizando o APP')
 
 def escolher_opcao():#funcão para escolher uma das opções
     try: #o try tenta fazer tudo que esta dentro dele caso não consiga executa o except
