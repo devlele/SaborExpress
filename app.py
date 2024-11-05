@@ -39,16 +39,21 @@ def alternar_status():
 
 def exibir_subtitulo(texto):
     os.system
+    linha = '*' * len(texto)
+    print(linha)
     print(texto)
+    print(linha)
     print()
 
 def listar_restaurantes():
     exibir_subtitulo('Listando os restaurantes')
+
+    print(f'{'Nome do restaurante'.ljust(22)} | {'Categoria'.ljust(20)} | {'Status'}')
     for restaurante in restaurantes:
         nome_restaurante = restaurante['nome'] 
         categoria = restaurante['categoria']
-        ativo = restaurante['ativo']
-        print(f' - {nome_restaurante} | {categoria} | {ativo}')
+        ativo = 'Ativado' if restaurante['ativo'] else 'Desativado'
+        print(f' - {nome_restaurante.ljust(20)} | {categoria.ljust(20)} | {ativo}')
     voltar_ao_menu()
 
 def opcao_invalida(): #função para lidar com dados invalidos
